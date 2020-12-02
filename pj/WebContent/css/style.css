@@ -3,6 +3,9 @@
 font-family: 'Do Hyeon', sans-serif;
 font-family: 'Noto Sans KR', sans-serif;
 */
+/* index css */
+@import "css/com.css";
+
 h1, h2, h3, h4, .navbar-brand {
 	font-family: 'Do Hyeon', sans-serif;
 	color: #4A148C;
@@ -16,3 +19,9 @@ body {
 .navbar {
 	border-bottom: #E53935 3px solid;
 }
+
+.carousel-item {
+	width: 200px;
+	height: 200px;
+}
+
