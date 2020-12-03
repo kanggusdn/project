@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.text-center{
+	margin-top: 100px;
+}
+.board-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+
+.board-list li {
+	position: relative;
+	margin: 30px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.board-list img {
+	margin: 0;
+	padding: 0;
+	float: center;
+	z-index: 5;
+}
+.com__size{
+	width: 400px;
+	height: 400px;
+	margin: 10px;
+}
+
+.board-list .com_show {
+	position: absolute;
+	bottom: -200px;
+	width: 400px;
+	height: 200px;
+	padding-top: 20px;
+	background: rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	transition: all 0.1s ease-in-out;
+	z-index: 10;
+}
+
+.board-list li:hover .com_show {
+	opacity: 1;
+	transform: translateY(-200px);
+}
+
+.board-list .com_show h4, .board-list .com_show p {
+	color: #fff;
+	text-align: center;
+	position: relative;
+	font-size: 30px;
+}
