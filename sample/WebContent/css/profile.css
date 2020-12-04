@@ -1,10 +1,7 @@
 @charset "UTF-8";
-.card {
-	width: 300px;
-	margin: 300px;
-	height: 300px;
-	margin: 0 auto;
-	margin-top: 50px;
+modal-dialog {
+	width: 200px;
+	height: 200px;
+	margin: 0;
 	padding: 0;
-	text-align: center;
 }

@@ -7,7 +7,7 @@
 	if ((session.getAttribute("id")==null) || 
 			(!((String)session.getAttribute("id")).equals("admin"))) {
 		out.println("<script>");
-		out.println("location.href='member_list.jsp'");
+		out.println("location.href='loginForm.jsp'");
 		out.println("</script>");
 	}
 	
@@ -51,7 +51,7 @@
 	</tr>
 	<tr>
 		<td>비밀번호 : </td>
-		<td><%=rs.getString("password") %></td>
+		<td><%=rs.getString("passwd") %></td>
 	</tr>
 	<tr>
 		<td>이름 : </td>
@@ -68,7 +68,7 @@
 		<td><%=rs.getString("email") %></td>
 	</tr>
 	<tr>
-		<td colspan=2><a href="member_list.jsp">리스트로 돌아가기</a></td>
+		<td colspan=2><a href="profile.html">리스트로 돌아가기</a></td>
 	</tr>
 </table>
 </body>

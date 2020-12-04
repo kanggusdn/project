@@ -8,7 +8,7 @@
 	if ((session.getAttribute("id")==null) || 
 	  (!((String)session.getAttribute("id")).equals("admin"))) {
 		out.println("<script>");
-		out.println("location.href='member_info.jsp'");
+		out.println("location.href='loginForm.jsp'");
 		out.println("</script>");
 	}
 	

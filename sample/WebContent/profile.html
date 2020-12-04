@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <!-- Required meta tags -->
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -19,51 +20,39 @@
 	rel="stylesheet">
 <!-- css origin -->
 <link rel="stylesheet" href="css/style.css" />
+<title>프로필</title>
 </head>
 <body>
-	<section id="profile-card">
-		<div class="row row-cols-1 row-cols-md-2">
-			<div class="col mb-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">ezCom 프로필</h5>
-						<p class="card-text">ezCom에서의 '나'를 표현하는 프로필 정보입니다.</p>
-						<input type="button" class="btn btn-primary" value="수정"
-							onclick="location.href='profile-modify.do'">
-					</div>
+	<button id="testBtn" class="btn">모달 테스트</button>
+	<!-- 회원가입 확인 Modal-->
+	<div class="modal fade" id="testModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal"
+						aria-label="Close">
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</button>
+					<h3 class="modal-title" id="exampleModalLabel">
+						모달테스트
+						</h5>
 				</div>
-			</div>
-			<div class="col mb-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">연락처 및 알림</h5>
-						<p class="card-text">ezCom에서 중요 내용을 알려드릴 때 사용하는 연락처 정보입니다.</p>
-						<input type="button" class="btn btn-primary" value="수정"
-							onclick="location.href='number-modify.do'">
-					</div>
-				</div>
-			</div>
-			<div class="col mb-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">지역 설정</h5>
-						<p class="card-text">ezCom 서비스에서 공통으로 사용되는 지역 정보입니다.</p>
-						<input type="button" class="btn btn-primary" value="설정"
-							onclick="location.href='set.do'">
-					</div>
-				</div>
-			</div>
-			<div class="col mb-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">배송지 관리</h5>
-						<p class="card-text">내가 저장한 배송지 및 최근 사용한 배송지를 관리할 수 있습니다.</p>
-						<input type="button" class="btn btn-primary" value="조회"
-							onclick="location.href='check.do'">
-					</div>
+				<div class="modal-body">내용 입력 !!</div>
+				<div class="modal-footer">
+					<a class="btn" id="modalY" href="#">예</a>
+					<button class="btn" type="button" data-dismiss="modal">아니요</button>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+	<script>
+		$('#testBtn').click(function(e) {
+			e.preventDefault();
+			$('#testModal').modal("show");
+		});
+	</script>
 </body>
 </html>
