@@ -1,18 +1,7 @@
-<%@page import="vo.PageInfo"%>
-<%@page import="vo.BoardBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="java.util.*"%>
-<%@ page import="java.text.SimpleDateFormat"%>
 <%
-	ArrayList<BoardBean> articleList = (ArrayList<BoardBean>) request.getAttribute("articleList");
-PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
-int listCount = pageInfo.getListCount();
-int nowPage = pageInfo.getPage();
-int maxPage = pageInfo.getMaxPage();
-int startPage = pageInfo.getStartPage();
-int endPage = pageInfo.getEndPage();
+	response.setContentType("text/html;charset=UTF-8");
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,77 +22,71 @@ int endPage = pageInfo.getEndPage();
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
 	rel="stylesheet">
 </head>
-
 <body>
-	<!-- 게시판 리스트 -->
-
 	<div id="main">
-		<h2>ezCOM 게시판</h2>
+		<h1>Hidden Page</h1>
+		<hr>
 		<br>
+		<button type="button" class="btn btn-primary">전체글</button>
+		<button type="button" class="btn btn-info">개념글</button>
+		<button type="button" class="btn btn-info">공지</button>
+		<br> <br>
 		<table class="table table-hover">
-			<%
-				if (articleList != null && listCount > 0) {
-			%>
 			<thead>
 				<tr>
-					<td>번호</td>
-					<td>제목</td>
-					<td>작성자</td>
-					<td>날짜</td>
-					<td>조회수</td>
+					<th>번호</th>
+					<th>제목</th>
+					<th>글쓴이</th>
+					<th>작성일</th>
+					<th>조회</th>
+					<th>추천</th>
 				</tr>
-				<%
-					for (int i = 0; i < articleList.size(); i++) {
-				%>
+			</thead>
+			<tbody>
 				<tr>
-					<td><%=articleList.get(i).getBOARD_NUM()%></td>
-
-					<td>
-						<%
-							if (articleList.get(i).getBOARD_RE_LEV() != 0) {
-						%> <%
- 	for (int a = 0; a <= articleList.get(i).getBOARD_RE_LEV() * 2; a++) {
- %> &nbsp; <%
- 	}
- %> ▶ <%
- 	} else {
- %> <%
- 	}
- %> <a
-						href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM()%>&page=<%=nowPage%>">
-							<%=articleList.get(i).getBOARD_SUBJECT()%>
-					</a>
-					</td>
-
-					<td><%=articleList.get(i).getBOARD_NAME()%></td>
-					<td><%=articleList.get(i).getBOARD_DATE()%></td>
-					<td><%=articleList.get(i).getBOARD_READCOUNT()%></td>
+					<td>265121</td>
+					<td>엌 아래글 진짜 관리자임?</td>
+					<td>ㅇㅇ</td>
+					<td>2020.04.23</td>
+					<td>1000</td>
+					<td>100</td>
 				</tr>
-				<%
-					}
-				%>
-			
+				<tr>
+					<td>265120</td>
+					<td>본인 방금 추천 많이 받아서 개념글 상상함</td>
+					<td>운영자</td>
+					<td>2020.04.23</td>
+					<td>7000</td>
+					<td>150</td>
+				</tr>
+			</tbody>
 		</table>
-		<br>
-		<button type="button" class="btn btn-info float-primary">
-			<a href="boardWriteForm.bo">글쓰기</a>
-		</button>
+
+		<br> <br> <br> <br>
+		<button type="button" class="btn btn-primary float-left">전체글</button>
+		<button type="button" class="btn btn-info float-left">개념글</button>
+		<button type="button" class="btn btn-info float-right">글쓰기</button>
+
+		<br> <br>
 		<nav aria-label="Page navigation example">
 			<ul class="pagination justify-content-center">
 				<li class="page-item"><a class="page-link"
-					href="boardList.bo?page=<%=nowPage - 1%>">이전</a></li>
+					href="http://127.0.0.1:5500/index.html#">Previous</a></li>
 				<li class="page-item"><a class="page-link"
-					href="boardList.bo?page=<%=nowPage + 1%>">다음</a></li>
+					href="http://127.0.0.1:5500/index.html#">1</a></li>
+				<li class="page-item"><a class="page-link"
+					href="http://127.0.0.1:5500/index.html#">2</a></li>
+				<li class="page-item"><a class="page-link"
+					href="http://127.0.0.1:5500/index.html#">3</a></li>
+				<li class="page-item"><a class="page-link"
+					href="http://127.0.0.1:5500/index.html#">4</a></li>
+				<li class="page-item"><a class="page-link"
+					href="http://127.0.0.1:5500/index.html#">5</a></li>
+				<li class="page-item"><a class="page-link"
+					href="http://127.0.0.1:5500/index.html#">Next</a></li>
 			</ul>
 		</nav>
 	</div>
-	<%
-		} else {
-	%>
-	<section id="emptyArea">등록된 글이 없습니다.</section>
-	<%
-		}
-	%>
 	<script src="./Document_files/jquery.min.js.다운로드"></script>
 	<script type="text/javascript" src="./Document_files/bootstrap.js.다운로드"></script>
 	<!-- Code injected by live-server -->
