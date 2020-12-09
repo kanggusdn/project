@@ -21,8 +21,7 @@
 	rel="stylesheet">
 </head>
 <body>
-	<!-- 게시판 등록 -->
-
+	<!-- 2020/12/7 강현우 게시판 글 등록 시작 -->
 	<section id="writeForm">
 		<h2>ezCom 글 등록</h2>
 			<form action="boardWritePro.bo" method="post"
@@ -54,6 +53,7 @@
 		<button type="reset" class="btn btn-info">다시 쓰기</button>
 	</form>
 	</section>
+	<!-- 게시판 글 등록 끝 -->
 	<!-- Optional JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script

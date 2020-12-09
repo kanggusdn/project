@@ -68,16 +68,16 @@ public class BoardDAO {
 			
 			while(rs.next()) {
 				board = new BoardBean();
-				board.setBoard_num(rs.getInt("board_num"));
-				board.setBoard_name(rs.getString("board_name"));
-				board.setBoard_subject(rs.getString("board_subject"));
-				board.setBoard_content(rs.getString("board_content"));
-				board.setBoard_file(rs.getString("board_file"));
-				board.setBoard_re_ref(rs.getInt("board_re_ref"));
-				board.setBoard_re_lev(rs.getInt("board_re_lev"));
-				board.setBoard_re_seq(rs.getInt("board_re_seq"));
-				board.setBoard_readcount(rs.getInt("board_readcount"));
-				board.setBoard_date(rs.getDate("board_date"));
+				board.setBOARD_NUM(rs.getInt("board_num"));
+				board.setBOARD_NAME(rs.getString("board_name"));
+				board.setBOARD_SUBJECT(rs.getString("board_subject"));
+				board.setBOARD_CONTENT(rs.getString("board_content"));
+				board.setBOARD_FILE(rs.getString("board_file"));
+				board.setBOARD_RE_REF(rs.getInt("board_re_ref"));
+				board.setBOARD_RE_LEV(rs.getInt("board_re_lev"));
+				board.setBOARD_RE_SEQ(rs.getInt("board_re_seq"));
+				board.setBOARD_READCOUNT(rs.getInt("board_readcount"));
+				board.setBOARD_DATE(rs.getDate("board_date"));
 				articleList.add(board);
 			}
 		} catch (Exception e) {
@@ -102,16 +102,16 @@ public class BoardDAO {
 			
 			if(rs.next()) {
 				boardBean = new BoardBean();
-				boardBean.setBoard_num(rs.getInt("board_num"));
-				boardBean.setBoard_name(rs.getString("board_name"));
-				boardBean.setBoard_subject(rs.getString("board_subject"));
-				boardBean.setBoard_content(rs.getString("board_content"));
-				boardBean.setBoard_file(rs.getString("board_file"));
-				boardBean.setBoard_re_ref(rs.getInt("board_re_ref"));
-				boardBean.setBoard_re_lev(rs.getInt("board_re_lev"));
-				boardBean.setBoard_re_seq(rs.getInt("board_re_seq"));
-				boardBean.setBoard_readcount(rs.getInt("board_readcount"));
-				boardBean.setBoard_date(rs.getDate("board_date"));
+				boardBean.setBOARD_NUM(rs.getInt("board_num"));
+				boardBean.setBOARD_NAME(rs.getString("board_name"));
+				boardBean.setBOARD_SUBJECT(rs.getString("board_subject"));
+				boardBean.setBOARD_CONTENT(rs.getString("board_content"));
+				boardBean.setBOARD_FILE(rs.getString("board_file"));
+				boardBean.setBOARD_RE_REF(rs.getInt("board_re_ref"));
+				boardBean.setBOARD_RE_LEV(rs.getInt("board_re_lev"));
+				boardBean.setBOARD_RE_SEQ(rs.getInt("board_re_seq"));
+				boardBean.setBOARD_READCOUNT(rs.getInt("board_readcount"));
+				boardBean.setBOARD_DATE(rs.getDate("board_date"));
 			}
 		}catch (Exception e) {
 			System.out.println("getDetail 에러: " + e);
@@ -143,11 +143,11 @@ public class BoardDAO {
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1,  num);
-			pstmt.setString(2, article.getBoard_name());
-			pstmt.setString(3, article.getBoard_pass());
-			pstmt.setString(4, article.getBoard_subject());
-			pstmt.setString(5, article.getBoard_content());
-			pstmt.setString(6, article.getBoard_file());
+			pstmt.setString(2, article.getBOARD_NAME());
+			pstmt.setString(3, article.getBOARD_PASS());
+			pstmt.setString(4, article.getBOARD_SUBJECT());
+			pstmt.setString(5, article.getBOARD_CONTENT());
+			pstmt.setString(6, article.getBOARD_FILE());
 			pstmt.setInt(7,  num);
 			pstmt.setInt(8,  0);
 			pstmt.setInt(9,  0);
@@ -188,9 +188,9 @@ public class BoardDAO {
 		String sql = "";
 		int num = 0;
 		int insertCount = 0;
-		int re_ref = article.getBoard_re_ref();
-		int re_lev = article.getBoard_re_lev();
-		int re_seq = article.getBoard_re_seq();
+		int re_ref = article.getBOARD_RE_REF();
+		int re_lev = article.getBOARD_RE_LEV();
+		int re_seq = article.getBOARD_RE_SEQ();
 		
 		try {
 			pstmt = conn.prepareStatement(board_max_sql);
@@ -212,10 +212,10 @@ public class BoardDAO {
 			sql = "insert into board values (?,?,?,?,?,?,?,?,?,?,now())";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
-			pstmt.setString(2, article.getBoard_name());
-			pstmt.setString(3, article.getBoard_pass());
-			pstmt.setString(4, article.getBoard_subject());
-			pstmt.setString(5, article.getBoard_content());
+			pstmt.setString(2, article.getBOARD_NAME());
+			pstmt.setString(3, article.getBOARD_PASS());
+			pstmt.setString(4, article.getBOARD_SUBJECT());
+			pstmt.setString(5, article.getBOARD_CONTENT());
 			pstmt.setString(6, "");
 			pstmt.setInt(7,  re_ref);
 			pstmt.setInt(8,  re_lev);
@@ -262,9 +262,9 @@ public class BoardDAO {
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, article.getBoard_subject());
-			pstmt.setString(2, article.getBoard_content());
-			pstmt.setInt(3, article.getBoard_num());
+			pstmt.setString(1, article.getBOARD_SUBJECT());
+			pstmt.setString(2, article.getBOARD_CONTENT());
+			pstmt.setInt(3, article.getBOARD_NUM());
 			updateCount = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("boardModify 에러: " + e);
