@@ -1,0 +1,13 @@
+@charset "UTF-8";
+.card__size{
+	width:100%;
+	height: 350px;
+	padding: 20px;
+	margin-right: 20px;
+}
+.card-img__cover{
+	height: 70%;
+}
+.card__deck-margin{
+	margin-bottom: 50px;
+}

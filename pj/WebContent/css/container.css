@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.container__size{
+	margin-top: 150px;
+}
+.container__center{
+	overflow: hidden;
+	height: 400px;
+}
