@@ -30,31 +30,39 @@ String nowPage = (String) request.getAttribute("page");
 
 <body>
 	<!-- 2020/12/8 게시판 상세보기 -->
-	<section id="articleForm">
-		<h2>글 내용 상세보기</h2>
-		<section id="basicInfoArea">
-			제 목 :
-			<%=article.getBOARD_SUBJECT()%>
-			첨부파일 :
-			<%
-			if (!(article.getBOARD_FILE() == null)) {
-		%>
-			<a href="file_down?downFile=<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE()%>
-			</a>
-			<%
-				}
-			%>
-		</section>
-		<section id="articleContentArea">
-			<%=article.getBOARD_CONTENT()%>
-		</section>
-	</section>
-	<section id="commandList">
-		<a class="btn btn-primary" href="boardReplyForm.bo?board_num=<%=article.getBOARD_NUM()%>&page=<%=nowPage%>" role="button">답변</a>&nbsp;&nbsp; 
-		<a class="btn btn-primary" href="boardModifyForm.bo?board_num=<%=article.getBOARD_NUM()%>&page=<%=nowPage%>" role="button">수정</a>&nbsp;&nbsp;
-		<a class="btn btn-primary" href="boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM()%>&page=<%=nowPage%>" role="button">삭제</a>&nbsp;&nbsp;
-		<a class="btn btn-primary" href="boardList.bo?page=<%=nowPage%>" role="button">목록</a>&nbsp;&nbsp;
-	</section>
+	<div class="container">
+		<div class="text-center">
+			<section id="articleForm">
+
+				<h2>글 내용 상세보기</h2>
+				<section id="basicInfoArea">
+					제 목 :
+					<%=article.getBOARD_SUBJECT()%>
+					<br />
+					<%
+					if (!(article.getBOARD_FILE() == null)) {
+				%>
+					<img src="/boardUpload/<%=article.getBOARD_FILE()%>" alt="-">
+					<%
+						}
+					%>
+				</section>
+				<section id="articleContentArea">
+					<%=article.getBOARD_CONTENT()%>
+				</section>
+			</section>
+			<section id="commandList">
+				<a class="btn btn-primary"
+					href="boardReplyForm.bo?board_num=<%=article.getBOARD_NUM()%>&page=<%=nowPage%>"
+					role="button">답변</a>&nbsp;&nbsp; <a class="btn btn-primary"
+					href="boardModifyForm.bo?board_num=<%=article.getBOARD_NUM()%>&page=<%=nowPage%>"
+					role="button">수정</a>&nbsp;&nbsp; <a class="btn btn-primary"
+					href="boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM()%>&page=<%=nowPage%>"
+					role="button">삭제</a>&nbsp;&nbsp; <a class="btn btn-primary"
+					href="boardList.bo?page=<%=nowPage%>" role="button">목록</a>&nbsp;&nbsp;
+			</section>
+		</div>
+	</div>
 	<!-- 상세보기 끝 -->
 	<!-- Optional JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

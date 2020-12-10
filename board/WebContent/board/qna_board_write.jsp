@@ -23,35 +23,44 @@
 <body>
 	<!-- 2020/12/7 강현우 게시판 글 등록 시작 -->
 	<section id="writeForm">
-		<h2>ezCom 글 등록</h2>
+		<div class="container" style="width: 40%">
+		<div class= "text-center">
+			<h2>ezCom 글 등록</h2>
+			</div>
 			<form action="boardWritePro.bo" method="post"
-			enctype="multipart/form-data" name="boardform">
-		<div class="form-col">
-			<div class="form-group col-md-2">
-				<label for="BOARD_NAME">글쓴이</label> <input type="text"
-					class="form-control" id="BOARD_NAME" name="BOARD_NAME" required="required" />
-			</div>
-			<div class="form-group col-md-2">
-				<label for="BOARD_PASS">비밀번호</label> <input type="password"
-					class="form-control" id="BOARD_PASS" name="BOARD_PASS" required="required" />
-			</div>
-			<div class="form-group col-md-2">
-				<label for="BOARD_SUBJECT">제 목</label> <input type="text"
-					class="form-control" id="BOARD_SUBJECT" name="BOARD_SUBJECT" required="required" />
-			</div>
-			<div class="form-group col-md-6">
-				<label for="BOARD_CONTENT">내 용</label>
-				<textarea class="form-control is-invalid" id="validationTextarea" name="BOARD_CONTENT"
-					placeholder="내용을 적어 주세요." style="resize: none;" required></textarea>
-			</div>
-			<div class="form-group col-md-2">
-				<label for="BOARD_FILE">파일 첨부</label> <input type="file"
-					class="form-control" name="BOARD_FILE" id="BOARD_FILE" />
-			</div>
+				enctype="multipart/form-data" name="boardform">
+				<div class="form-col">
+					<div class="form-group ">
+						<label for="BOARD_NAME">글쓴이</label> <input type="text"
+							class="form-control" id="BOARD_NAME" name="BOARD_NAME"
+							required="required" />
+					</div>
+					<div class="form-group">
+						<label for="BOARD_PASS">비밀번호</label> <input type="password"
+							class="form-control" id="BOARD_PASS" name="BOARD_PASS"
+							required="required" />
+					</div>
+					<div class="form-group">
+						<label for="BOARD_SUBJECT">제 목</label> <input type="text"
+							class="form-control" id="BOARD_SUBJECT" name="BOARD_SUBJECT"
+							required="required" />
+					</div>
+					<div class="form-group">
+						<label for="BOARD_CONTENT">내 용</label>
+						<textarea class="form-control is-invalid" id="validationTextarea"
+							name="BOARD_CONTENT" placeholder="내용을 적어 주세요."
+							style="resize: none;" required></textarea>
+					</div>
+					<div class="form-group">
+						<label for="BOARD_FILE">파일 첨부</label> <input type="file" accept="image/*"
+							class="form-control" name="BOARD_FILE" id="BOARD_FILE" />
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary">글 등록</button>
+				<button type="reset" class="btn btn-info">다시 쓰기</button>
+				<a class="btn btn-primary"	href="javascript:history.go(-1)" role="button">뒤로</a>
+			</form>
 		</div>
-		<button type="submit" class="btn btn-primary">글 등록</button>
-		<button type="reset" class="btn btn-info">다시 쓰기</button>
-	</form>
 	</section>
 	<!-- 게시판 글 등록 끝 -->
 	<!-- Optional JavaScript -->

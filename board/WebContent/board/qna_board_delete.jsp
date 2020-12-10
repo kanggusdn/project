@@ -25,20 +25,25 @@ String nowPage = (String) request.getAttribute("page");
 </head>
 <body>
 	<!-- 2020/12/8 글 삭제 시작 -->
-	<section id="passForm">
-		<form name="deleteForm"
-			action="boardDeletePro.bo?board_num=<%=board_num%>" method="post">
-			<input type="hidden" name="page" value="<%=nowPage%>" />
-			<div class="form-col">
-				<div class="form-group col-md-2">
-					<label for="BOARD_PASS">글 비밀번호 : </label> <input name="BOARD_PASS"
-						class="form-control" type="password" id="BOARD_PASS"
-						required="required" /> 
-					<input name="BOARD_DELETE" class="form-control" id="BOARD_DELETE" type="submit" value="삭제" />&nbsp;&nbsp; 
-					<input name="BOARD_RETURN" class="form-control" id="BOARD_RETURN" type="button" value="돌아가기" onClick="javascript:history.go(-1)" />
-				</div>
+	<section id="passForm" class="">
+		<div class="container pt-4">
+			<div class="text-center m-3">
+				<form name="deleteForm"
+					action="boardDeletePro.bo?board_num=<%=board_num%>" method="post">
+					<input type="hidden" name="page" value="<%=nowPage%>" />
+					<div class="form-col">
+						<div class="form-group">
+							<input name="BOARD_PASS" placeholder="글 비밀번호"
+								class="form-control" type="password" id="BOARD_PASS"
+								required="required" /> <input name="BOARD_DELETE"
+								class="form-control" id="BOARD_DELETE" type="submit" value="삭제" />&nbsp;&nbsp;
+							<input name="BOARD_RETURN" class="form-control" id="BOARD_RETURN"
+								type="button" value="돌아가기" onClick="javascript:history.go(-1)" />
+						</div>
+					</div>
+				</form>
 			</div>
-		</form>
+		</div>
 	</section>
 	<!-- Optional JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
