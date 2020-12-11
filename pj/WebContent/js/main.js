@@ -9,8 +9,11 @@ $(function() {
 		$(".tab-info").eq(num).removeClass("d-none");
 
 	});
+<<<<<<< HEAD
 	$("#loginModalJoinBtn").click(function(){
 		$('#loginModal').modal('hide');
 		$('#joinModal').modal('show');
 	});
+=======
+>>>>>>> refs/remotes/origin/master
 });

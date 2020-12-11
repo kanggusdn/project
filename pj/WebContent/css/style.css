@@ -8,6 +8,7 @@ font-family: 'Noto Sans KR', sans-serif;
 @import "container.css";
 @import "controller.css";
 @import "com.css";
+<<<<<<< HEAD
 @import "card.css";
 
 /*goodsList.css*/
@@ -16,6 +17,8 @@ font-family: 'Noto Sans KR', sans-serif;
 @import "goods/goodscard.css";
 @import "goods/modal.css";
 
+=======
+>>>>>>> refs/remotes/origin/master
 
 h1, h2, h3, h4, .navbar-brand {
 	font-family: 'Do Hyeon', sans-serif;
